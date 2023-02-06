@@ -1,0 +1,821 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap");
+
+/* ============================= Variable Css ============================ */
+:root {
+
+      /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(19, 64%, 54%);
+  --first-color-alt: hsl(19, 64%, 52%);
+  --title-color: hsl(19, 16%, 15%);
+  --text-color: hsl(19, 16%, 35%);
+  --text-color-light: hsl(19, 8%, 55%);
+  --body-color: hsl(19, 100%, 96%);
+  --container-color: hsl(19, 100%, 97%);
+  --underground-line:#296c99
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --title-font: "Lora", serif;
+  --subtitle-font: "Dancing Script", cursive;
+  --title-subfont:'Exo 2', sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+    
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: all 0.2s linear;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color:rgb(26, 26, 26);
+  /* transition: background 0.4s; for dark mode animation */
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.section {
+    padding-block: 5rem 1rem;
+  }
+.main{
+    overflow: auto;
+}
+/* =======================================Common class================= */
+.heading{
+    margin: 2rem 0;
+    /* padding-top: 2rem; */
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    text-decoration: underline;
+    text-underline-offset: -1rem;
+    text-decoration-color: var(--first-color);
+    color:rgb(193, 170, 170);
+  }
+/* ==========================Header=========================== */
+.header{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}.header__info{
+    margin: 1rem ;
+    color: white;
+}
+.Logo h1{
+    color: white;
+}
+.header .navLink{
+    float: right;
+}
+.header .navList li{
+    position: relative;
+}
+.header .navList li a{
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    display: block;
+    padding:  0.5rem 0.9rem;
+    border-radius: 1rem;
+    color: white;
+    transition: all 0.2s linear;
+}
+
+.header .navList li a:hover{
+    background-color: #f9f9f9;
+    color: rgb(157, 45, 45);
+}
+
+/* ============================Icons================== */
+  
+.bi-list{
+    display: none;
+}
+.bi-x-lg{
+    display: none;
+}
+/* ==================Show header=================== */
+.bg-header{
+    transition: 0.5s linear;
+    background-color:rgba(208, 216, 213, 0.374);
+    border-bottom: 2px solid sandybrown;
+}
+
+/* =====================================Home========================== */
+.main{
+    width: 100%;
+    overflow: hidden;
+}
+.home{
+   
+    display: flex;
+    align-items: center;
+    padding-top: 8rem;
+    gap: 2rem;
+
+}
+.home img{
+    width: 100%;
+    height: 80vh;
+}
+    /* =================================Vision=============================== */
+
+.vision p,
+.vision h1{
+    
+    font-size: 2rem;
+    font-family: var(--title-font);
+}
+/* =====================================Expertise================== */
+ .expertise__container{
+    width: 90%;
+    margin: 0 auto ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    margin-bottom:2rem ;
+}
+/*
+.box_container{
+    margin: 0 auto;
+    width: 30rem;
+    height: 20rem;
+    border-radius: 1rem;
+    background:url(../Assets/andrew-dawes-McOJndYajPM-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 20px 15px 10px #38333318;
+}
+.box_container .info{
+    position: absolute;
+    display: flex;
+    top: -100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 2rem;
+}
+
+.info:hover{
+    border: 2px solid white;
+    
+}
+.box_container:hover .info{
+    top: 10%;
+}
+
+.info h3{
+    font-weight: var(--font-medium);
+    text-align: center;
+}
+.info p{
+    margin: 5rem 0;
+    width: 80%;
+    text-align: center;
+    
+} */
+/* ==================================Stories====================== */
+.stories__container{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    column-gap: 2rem;
+    margin-bottom:2rem ;
+}
+.stories__container div{
+    width: 100%;
+}
+.stories__container h1{
+    color: aliceblue;
+}
+.stories_container{
+    margin: 0 auto;
+    width: 50rem;
+    height: 20rem;
+    border-radius: 1rem;
+    background:url(../Assets/andrew-dawes-McOJndYajPM-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 20px 15px 10px #38333318;
+}
+
+
+/* =======================================wallpaper====================== */
+.wallpaper{
+    padding: 2rem 0;
+    width: 100%;
+    height: 100vh;
+    border-top:  2px solid rgba(143, 99, 66, 0.977);
+    border-bottom: 2px solid rgba(143, 99, 66, 0.977);
+    background: url(../Assets/Blue\ Gradient\ Ink\ Watercolor\ Background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/* ==========================================Design Container=================== */
+.design__container{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+.design__container h1{
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: rgb(85, 85, 163);
+    font-weight: 900;
+}
+.design__container p{
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* ============================================== Services ==================== */
+.service_container{
+    margin: 0 auto;
+    height: 25rem;
+    overflow: hidden;
+    padding: 2rem;
+    background-color: rgb(169, 151, 128);
+    box-shadow: 20px 15px 10px #84333318;
+}
+/* service_container p{
+    margin-top: 2rem;
+    .font-size: 1.2rem;
+} */
+
+/* ============================================Photos Container=================== */
+/* .photos_container{
+    width: 80%;
+    height: 100%;
+    margin: 5rem auto;
+    
+}
+.mySwiper2{
+    width: 100%;
+}
+.mySwiper2 img{
+    width: 100%;
+    height: 30rem;
+}
+.mySwiperr{
+    width: 100%;
+    height: 100%;
+}
+.mySwiperr img{
+    width: 100%;
+    height: 15rem;
+} */
+
+/* ==================================footer===================== */
+
+.footer{
+    width: 100%;
+    border-top: 2px solid sandybrown;
+    /* margin-bottom: 2rem; */   
+}
+.footer h3{
+    color: white;
+}
+.footer-image img{
+    width: 100%;
+    height: 100%;
+}
+.footer p{
+    font-size: 1.1rem;
+}
+.footer i{
+    font-size: 2rem;
+    color: white;
+    margin: 0 1rem 0 0;
+}
+/* ==================================================About us Page===================== */
+.banner-container{
+    top: 60%;
+    position: absolute;
+    font-size: 5rem;
+
+   
+}
+.banner{
+    width: 100%;
+    height: 100%;
+}
+.banner .heading{
+    color: white;
+    font-size: 3rem;
+    text-underline-offset: -1rem;
+    margin-left: 2rem;
+}
+.banner-content{
+    top: 80%;
+    position: absolute;
+    background-color:rgb(26, 26, 26);
+    right: 0;
+    left: 0;
+    width: 100%;
+    
+    /* height: 50vh; */
+}
+.banner-content p:nth-child(1){
+    width: 90%;
+    font-size: 1.3rem;
+    margin: 1rem auto;
+    color: aliceblue;
+    /* background-color: #a52121; */
+}
+.banner-content h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto;
+    color: aliceblue;
+}
+.content-container{
+    width: 90%;
+    margin: 0 auto;
+}
+.content-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    place-items: start;
+}
+.vision{
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: aliceblue;
+}
+.vision i{
+    font-size: 4rem;
+    color: rgb(174, 113, 38);
+}
+.vision-content{
+    font-size: 1.5rem;
+}
+/* ==================================================Project Page================= */
+.Projects-container{
+    width: 100%;
+    height:30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.projects-section{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+.project-photos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+}
+dl dd{
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+dl dd:hover{
+   color: aquamarine;
+}
+.projects-section .card{
+    box-shadow: 10px 10px 10px #e5d9d95a;
+
+}
+
+/* =============================================Contact Us====================== */
+.contact-container {
+   padding: 8rem 0 3rem 0 ;
+   height: 90vh;
+   width: 100%;
+   margin: 0 auto;
+   background: url(../Assets/andrew-dawes-McOJndYajPM-unsplash.jpg);
+   background-position: center;
+   background-size: cover;
+   backdrop-filter: blur(5px);
+   
+}
+.contact-container .links-container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.contact-container .links-container a{
+    font-size: 2rem;
+    color: rgb(131, 27, 27);
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.5s ease;
+}
+.contact-container .links-container a:hover{
+    color: rgb(47, 69, 61);
+}
+.contact-container .links-container i{
+    margin-right:  0.9rem;
+}
+.contact-container .links-container a:nth-child(1), .contact-container .links-container a:nth-child(3){
+    padding: 0 4rem;
+}
+
+/* =============================================Projects============================ */
+.Project-private-container img{
+    padding: 0 0 3rem 0 ;
+    height: 100vh;
+    width: 100%;
+ }
+ .project-container-photo{
+    padding: 1rem;
+    background-color: #a52121;
+ }
+.mySwiper3{
+    width: 80%;
+    border-radius: 1rem;
+}
+.mySwiper3 img{
+    width: 100%;
+    height: 30rem;
+}
+/* ================================Loader=============================  */
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    background: white;
+    overflow: hidden;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transition:  0.4s ease-in-out;
+}
+.loader-container img{
+    width: 35rem;
+}
+.loader-container.fade-Out{
+    top: -110%;
+    opacity: 0;
+}
+
+/* ==============================Large Devices===================== */
+@media (max-width:1024px){
+    .vision p,
+    .vision h1{
+    font-size: 1.5rem;
+    font-family: var(--title-font);
+}
+.expertise__container{
+    grid-template-columns: 1fr 1fr ;
+}
+.box_container{
+    margin: 0 auto;
+    width: 20rem;
+    height: 20rem;
+}
+.service_container{
+    margin: 0 auto;
+    width: 20rem;
+    height: 20rem;
+}
+}
+/* =========================== medium devices====================== */
+@media (max-width:970px){
+    .Logo h1{
+        font-size: 2rem;
+    }
+    .navLink{
+       text-align: center;
+       display: flex;
+       justify-content: center;
+       position: absolute;
+       top: 100%;
+       height: 50vh;
+       right: -100%;
+       width: 100%;
+       transition: all 400ms;
+       background-color: rgba(154, 74, 50, 0.478);
+    }
+    .navList{
+        padding: 2rem 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .navList li{
+        margin-bottom: 1rem;
+    }
+    .navList li a{
+        color:white !important;
+    }
+    /* =============================Icons======================= */
+    .bi-list{
+        display: block;
+        font-size: 2rem;
+        font-weight: bolder;
+        /* background-color: #b8a8a8; */
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+    .bi-x-lg{
+        display: block;
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        cursor: pointer;
+    }
+
+    /* ===================================Common Base=================== */
+    .heading{
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+        text-underline-offset: -0.5rem;
+    }
+  
+    /* =========================Vision ================*/
+    .vision{
+        justify-content: center;
+    }
+    .vision p,
+    .vision h1{
+        font-size:1.5rem !important;
+        font-weight: 500;  
+    }
+    /* ================================= show Menu ========================= */
+    .show-menu{
+        right: 0;
+    }
+    /* =============================expertise========================== */
+    .expertise__container{
+        grid-template-columns: 1fr  1fr;
+    }
+    /* ===========================STORIES====================== */
+    .stories__container{
+        grid-template-columns: 1fr;
+    }
+    .stories_container{
+        height: 20rem
+    }
+    .stories__container h1{
+        font-size:1.6rem ;
+    }
+    /* =========================================Design Container===================== */
+    .design__container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    /* ========================================Services===================== */
+    .service_container{
+        height: 25rem;
+        padding: 1rem;
+    }
+    .service_container p{
+        margin-top: 0.9rem;
+        font-size: 1.2rem;
+    }
+     /* ============================Photos======================== */
+     .mySwiperr img{
+        width: 100%;
+        height: 10rem;
+    }
+    /* =====================================About Us==================== */
+    .content-info{
+        grid-template-columns: 1fr ;
+    }   
+
+    /* ===========================================Projects======================== */
+    .project-photos{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:768px){
+    .expertise__container{
+        grid-template-columns: 1fr ;
+    }
+    /* =======Expertise====== */
+    .box_container{
+        margin: 0 auto;
+        width: 30rem;
+        height: 20rem;
+    }
+    .service_container{
+        margin: 0 auto;
+        width: 30rem;
+        height: 20rem;
+    }
+    /* =====================Stories======== */
+    .stories__container h1{
+        font-size:1.6rem ;
+    }
+    .stories__container{
+        grid-template-columns: 1fr;
+    }
+    .stories_container p{
+        font-size: 2rem !important;
+    }
+    /* ======================= wallpaper================== */
+    .wallpaper{
+        padding: 2rem 0;
+        height: 90vh;}
+    .wallpaper h1{
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+    /* ============================Photos======================== */
+    .mySwiperr img{
+        width: 100%;
+        height: 5rem;
+    }
+
+    /* ==============================footer====================== */
+    .footer-image img{
+       height: 0;
+    }
+}
+@media (max-width:420px) {
+
+
+    
+    .Logo h1{
+        font-size: 1rem;
+    }
+    .bi-list{
+        font-size: 1.5rem;
+    }
+    .bi-x-lg{
+        font-size: 1.5rem;
+    }
+    /* =================Expertise====== */
+    .expertise__container{
+        grid-template-columns: 1fr;
+    }
+    .box_container{
+        width: 20rem;
+    }
+    .service_container{
+        width: 20rem;
+    }
+    /* =================================Vision=============================== */
+    .vision{
+        justify-content: center;
+    }
+    .vision p
+    ,.vision h1{
+        font-size:1.2rem !important;
+        font-weight: 500;
+    }
+    /* ========================Stories========================== */
+    .stories__container h1{
+        font-size: 1.2rem!important;
+    }
+    .stories__container p{
+        font-size: 1rem!important;
+        font-weight: var(--font-semi-bold);
+    }
+     /* ======================= wallpaper================== */
+     .wallpaper{
+        height: 100%;
+    }
+    .wallpaper h1{
+        font-size: 1rem;
+        font-weight: 900;
+    }
+    .wallpaper p{
+        margin-top: 0;
+        font-size: 1rem;
+    }
+    /* ========================================Services===================== */
+    .service_container{
+        padding: 1rem;
+    }
+    .service_container p{
+        margin-top: 1.5rem;
+        font-size: 1rem;
+    }
+    /* ==============================About Us=========================== */
+    .banner-container{
+        width: 100%;
+    }
+  
+    .banner-content p{
+        width: 100%;
+        font-size: 1rem;
+        margin: 1rem auto;
+        /* background-color: #a52121; */
+    }
+    .banner-content h1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5rem auto;
+    }
+    .contact-container .links-container a{
+        font-size: 1.4rem !important;
+    }
+}
+@media (max-width:280px){
+    .box_container{
+        margin: 0 auto;
+        width: 15rem;
+        height: 15rem;
+    }
+    .service_container{
+        margin: 0 auto;
+        width: 15rem;
+        height: 15rem;
+    }
+    .info p{
+        margin: 1rem 0;
+        width: 90%;
+        text-align: center;
+    }
+    .heading{
+        font-size: 1.2rem;
+        text-underline-offset: -0.4rem;
+    }
+    .banner-container{
+        top: 40%;
+       
+    }
+    .banner .heading{
+    
+        font-size: 2rem;
+        
+        margin-left: 0rem;
+    }
+    .banner-content p:nth-child(1){
+      
+        font-size: 1rem;
+
+    }
+    .vision i{
+        font-size: 3rem;
+    }
+    .vision-content{
+        font-size: 1.2rem;
+    }
+    
+
+ 
+}
+
+
